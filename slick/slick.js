@@ -19,8 +19,6 @@
     'use strict';
     if (typeof define === 'function' && define.amd) {
         define(['jquery'], factory);
-    } else if (typeof exports !== 'undefined') {
-        module.exports = factory(require('jquery'));
     } else {
         factory(jQuery);
     }
@@ -1308,7 +1306,7 @@
                     'role': 'tabpanel',
                     'id': 'slick-slide' + _.instanceUid + i,
                     'tabindex': -1
-                });            
+                });
 
                 if (slideControlIndex !== -1) {
                     $(this).attr({
@@ -1319,7 +1317,7 @@
 
             _.$dots.attr('role', 'tablist').find('li').each(function(i) {
                 var mappedSlideIndex = tabControlIndexes[i];
-        
+
                 $(this).attr({
                     'role': 'presentation'
                 });
@@ -1366,7 +1364,7 @@
             if (_.options.accessibility === true) {
                 _.$prevArrow.on('keydown.slick', _.keyHandler);
                 _.$nextArrow.on('keydown.slick', _.keyHandler);
-            }   
+            }
         }
 
     };
@@ -1686,7 +1684,7 @@
 
             if (_.options.accessibility === true) {
                 _.initADA();
-                // for non-autoplay: once active slide (group) has updated, set focus on first newly showing slide 
+                // for non-autoplay: once active slide (group) has updated, set focus on first newly showing slide
                 if (!_.options.autoplay) {
                     var $currentSlide = $(_.$slides.get(_.currentSlide));
                     $currentSlide.attr('tabindex', 0).focus();
